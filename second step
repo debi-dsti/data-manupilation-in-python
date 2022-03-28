@@ -1,0 +1,11 @@
+# reading csv files and joining right join
+data1 = pd.read_csv('D:/data/accounts.csv')
+data2 = pd.read_csv('D:/data/contracts.csv')
+  
+# using merge function by setting how='left'
+output2 = pd.merge(data1, data2, 
+                   on='account_id',
+                   how='left')
+  
+# displaying result
+print(output2)
