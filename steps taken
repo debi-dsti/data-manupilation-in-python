@@ -1,0 +1,49 @@
+## i am merging multiple data files for this projects
+
+# importing pandas
+import pandas as pd
+  
+# merging 3 csv files
+df = pd.concat(
+    map(pd.read_csv, ['D://dataset/connectivity_status.csv', 'D://dataset/orders.csv', 'D://dataset/polling.csv']), ignore_index=True)
+print(df)
+        Unnamed: 0            creation_time   status  \
+0                0  2020-02-26 19:31:29.998  OFFLINE   
+1                1  2020-02-26 19:31:39.677   ONLINE   
+2                2  2020-02-26 20:08:42.789  OFFLINE   
+3                3  2020-02-26 20:09:03.448   ONLINE   
+4                4  2020-02-26 00:30:03.439  OFFLINE   
+...            ...                      ...      ...   
+388356      350440  2020-02-26 00:01:06.391      NaN   
+388357      350441  2020-02-26 00:00:50.194      NaN   
+388358      350442  2020-02-26 00:00:35.031      NaN   
+388359      350443  2020-02-26 00:00:19.871      NaN   
+388360      350444  2020-02-26 00:00:04.552      NaN   
+
+                                   device_id order_creation_time  order_id  \
+0       00083c70-7f54-4324-94bd-b0cb0be78baf                 NaN       NaN   
+1       00083c70-7f54-4324-94bd-b0cb0be78baf                 NaN       NaN   
+2       000fec74-a5b4-40fc-b93c-eef3b2afb87e                 NaN       NaN   
+3       000fec74-a5b4-40fc-b93c-eef3b2afb87e                 NaN       NaN   
+4       001d3c67-99fd-43b7-8207-f420fa303a49                 NaN       NaN   
+...                                      ...                 ...       ...   
+388356  f6ef8126-4539-4296-8f18-0dbabde50361                 NaN       NaN   
+388357  f6ef8126-4539-4296-8f18-0dbabde50361                 NaN       NaN   
+388358  f6ef8126-4539-4296-8f18-0dbabde50361                 NaN       NaN   
+388359  f6ef8126-4539-4296-8f18-0dbabde50361                 NaN       NaN   
+388360  f6ef8126-4539-4296-8f18-0dbabde50361                 NaN       NaN   
+
+       error_code  status_code  
+0             NaN          NaN  
+1             NaN          NaN  
+2             NaN          NaN  
+3             NaN          NaN  
+4             NaN          NaN  
+...           ...          ...  
+388356        NaN        200.0  
+388357        NaN        200.0  
+388358        NaN        200.0  
+388359        NaN        200.0  
+388360        NaN        200.0  
+
+[388361 rows x 8 columns]
